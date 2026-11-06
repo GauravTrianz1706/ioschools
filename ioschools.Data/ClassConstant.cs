@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace ioschools.Data
 {
+    /// <summary>
+    /// Provides string constants for every class / year-group identifier used in the school system.
+    /// Migrated from legacy ASP.NET MVC ClassConstant.cs — unnecessary using directives removed.
+    /// </summary>
     public static class ClassConstant
     {
+        // ---------------------------------------------------------------
+        // Kindergarten classes
+        // ---------------------------------------------------------------
         public const string A1 = "A1";
         public const string A2 = "A2";
         public const string A3 = "A3";
@@ -18,6 +20,10 @@ namespace ioschools.Data
         public const string C2 = "C2";
         public const string C3 = "C3";
         public const string C4 = "C4";
+
+        // ---------------------------------------------------------------
+        // Primary classes (Year 1–6, streams 1–4)
+        // ---------------------------------------------------------------
         public const string P11 = "1.1";
         public const string P12 = "1.2";
         public const string P13 = "1.3";
@@ -42,6 +48,10 @@ namespace ioschools.Data
         public const string P62 = "6.2";
         public const string P63 = "6.3";
         public const string P64 = "6.4";
+
+        // ---------------------------------------------------------------
+        // Secondary classes (Form 1–5, streams A–E)
+        // ---------------------------------------------------------------
         public const string S1A = "1A";
         public const string S1B = "1B";
         public const string S1C = "1C";
@@ -63,32 +73,34 @@ namespace ioschools.Data
         public const string S5B = "5B";
         public const string S5C = "5C";
         public const string S5D = "5D";
-        public const string Year2A = "Year 2A";
-        public const string Year2B = "Year 2B";
-        public const string Year3A = "Year 3A";
-        public const string Year3B = "Year 3B";
-        public const string Year4A = "Year 4A";
-        public const string Year4B = "Year 4B";
-        public const string Year5A = "Year 5A";
-        public const string Year5B = "Year 5B";
-        public const string Year6A = "Year 6A";
-        public const string Year6B = "Year 6B";
-        public const string Year7A = "Year 7A";
-        public const string Year7B = "Year 7B";
-        public const string Year8A = "Year 8A";
-        public const string Year8B = "Year 8B";
-        public const string Year9A = "Year 9A";
-        public const string Year9B = "Year 9B";
+
+        // ---------------------------------------------------------------
+        // International / Year-based classes (Year 2–13)
+        // ---------------------------------------------------------------
+        public const string Year2A  = "Year 2A";
+        public const string Year2B  = "Year 2B";
+        public const string Year3A  = "Year 3A";
+        public const string Year3B  = "Year 3B";
+        public const string Year4A  = "Year 4A";
+        public const string Year4B  = "Year 4B";
+        public const string Year5A  = "Year 5A";
+        public const string Year5B  = "Year 5B";
+        public const string Year6A  = "Year 6A";
+        public const string Year6B  = "Year 6B";
+        public const string Year7A  = "Year 7A";
+        public const string Year7B  = "Year 7B";
+        public const string Year8A  = "Year 8A";
+        public const string Year8B  = "Year 8B";
+        public const string Year9A  = "Year 9A";
+        public const string Year9B  = "Year 9B";
         public const string Year10A = "Year 10A";
         public const string Year10B = "Year 10B";
         public const string Year11A = "Year 11A";
         public const string Year11B = "Year 11B";
         public const string Year12A = "Year 12A";
         public const string Year12B = "Year 12B";
-        public const string Year13 = "Year 13";
+        public const string Year13  = "Year 13";
         public const string Year13A = "Year 13A";
         public const string Year13B = "Year 13B";
-
-
     }
 }

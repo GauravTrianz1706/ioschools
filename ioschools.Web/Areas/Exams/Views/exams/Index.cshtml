@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Exams";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>Exams</h2>
+        @if (Model != null)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>Term</th>
+                        <th>Created</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var exam in Model)
+                    {
+                        <tr>
+                            <td>@exam.Name</td>
+                            <td>@exam.Year</td>
+                            <td>@exam.Term</td>
+                            <td>@exam.CreatedAt.ToString("dd MMM yyyy")</td>
+                            <td>
+                                <a asp-area="Exams" asp-controller="Exams" asp-action="Show" asp-route-id="@exam.Id"
+                                   class="btn btn-sm btn-primary">View</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Welcome to ioSchools</h2>
+        
+        @if (ViewBag.News != null)
+        {
+            <div class="news-panel">
+                <h3>Latest News</h3>
+                @foreach (var item in ViewBag.News)
+                {
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">@item.Content</p>
+                            <small class="text-muted">@item.CreatedAt.ToString("dd MMM yyyy")</small>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    
+    <div class="col-md-4">
+        @if (ViewBag.Events != null)
+        {
+            <div class="events-panel">
+                <h3>Upcoming Events</h3>
+                <ul class="list-group">
+                    @foreach (var ev in ViewBag.Events)
+                    {
+                        <li class="list-group-item">
+                            <strong>@ev.Title</strong><br />
+                            <small>@ev.StartDate.ToString("dd MMM yyyy")</small>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</div>

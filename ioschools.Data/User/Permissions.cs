@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace ioschools.Data.User
 {
+    /// <summary>
+    /// Bit-flag enumeration of granular permissions (v2) that can be assigned to a user.
+    /// This is the updated permission set that supersedes <see cref="Permission"/> for new code.
+    /// Migrated from legacy ASP.NET MVC Permissions enum — unnecessary using directives removed.
+    /// WARNING: These values are persisted in the database as a 64-bit integer.
+    /// Do NOT change existing flag values without a corresponding database migration.
+    /// </summary>
     [Flags]
     public enum Permissions : long
     {
@@ -22,20 +24,17 @@ namespace ioschools.Data.User
         SPARE3                      = 0x0000000000000200,
         SPARE4                      = 0x0000000000000400,
 
-
         ECA_MANAGE                  = 0x0000000000000800,
         ECA_CREATE                  = 0x0000000000001000,
         ECA_EDIT_OTHERS             = 0x0000000000002000,
         SPARE5                      = 0x0000000000004000,
         SPARE6                      = 0x0000000000008000,
 
-
         ENROL_VIEW                  = 0x0000000000010000,
         ENROL_CREATE                = 0x0000000000020000,
         ENROL_MANAGE                = 0x0000000000040000,
         SPARE7                      = 0x0000000000080000,
         SPARE8                      = 0x0000000000100000,
-
 
         EXAM_CREATE                 = 0x0000000000200000,
         EXAM_VIEW                   = 0x0000000000400000,
@@ -45,17 +44,14 @@ namespace ioschools.Data.User
         SPARE9                      = 0x0000000004000000,
         SPARE10                     = 0x0000000008000000,
 
-
         FEES_MANAGE                 = 0x0000000010000000,
         FEES_UPDATE_STATUS          = 0x0000000020000000,
         SPARE11                     = 0x0000000040000000,
         SPARE12                     = 0x0000000080000000,
 
-
         HOMEWORK_CREATE             = 0x0000000100000000,
         SPARE13                     = 0x0000000200000000,
         SPARE14                     = 0x0000000400000000,
-
 
         LEAVE_MANAGE                = 0x0000000800000000,
         LEAVE_REVIEW                = 0x0000001000000000,
@@ -64,18 +60,15 @@ namespace ioschools.Data.User
         SPARE15                     = 0x0000008000000000,
         SPARE16                     = 0x0000010000000000,
 
-
         NEWS_CREATE                 = 0x0000020000000000,
         NEWS_EDIT_OTHERS            = 0x0000040000000000,
         SPARE17                     = 0x0000080000000000,
         SPARE18                     = 0x0000100000000000,
 
-
         TRANSCRIPTS_CREATE          = 0x0000200000000000,
         TRANSCRIPTS_EDIT            = 0x0000400000000000,
         SPARE19                     = 0x0000800000000000,
         SPARE20                     = 0x0001000000000000,
-
 
         USERS_VIEW_STUDENTS         = 0x0002000000000000,
         USERS_VIEW_PARENTS          = 0x0004000000000000,
@@ -86,6 +79,5 @@ namespace ioschools.Data.User
         USERS_EDIT_STAFF            = 0x0080000000000000,
         SPARE21                     = 0x0100000000000000,
         SPARE22                     = 0x0200000000000000
-
     }
 }

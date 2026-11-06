@@ -1,0 +1,97 @@
+@model ioschools.Application.DTOs.DashboardDto
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>Dashboard</h2>
+        @if (Model?.CurrentUser != null)
+        {
+            <p class="text-muted">Welcome back, <strong>@Model.CurrentUser.FullName</strong></p>
+        }
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Students</h5>
+                <p class="card-text display-6">@(Model?.TotalStudents ?? 0)</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Staff</h5>
+                <p class="card-text display-6">@(Model?.TotalStaff ?? 0)</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Pending Homework</h5>
+                <p class="card-text display-6">@(Model?.PendingHomework ?? 0)</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Upcoming Exams</h5>
+                <p class="card-text display-6">@(Model?.UpcomingExams ?? 0)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">Recent News</div>
+            <div class="card-body">
+                @if (Model?.RecentNews?.Any() == true)
+                {
+                    @foreach (var news in Model.RecentNews)
+                    {
+                        <div class="mb-2">
+                            <strong>@news.Title</strong>
+                            <small class="text-muted ms-2">@news.CreatedAt.ToString("dd MMM yyyy")</small>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-muted">No recent news</p>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">Upcoming Events</div>
+            <div class="card-body">
+                @if (Model?.UpcomingEvents?.Any() == true)
+                {
+                    <ul class="list-unstyled">
+                        @foreach (var ev in Model.UpcomingEvents)
+                        {
+                            <li class="mb-1">
+                                <strong>@ev.Title</strong><br />
+                                <small class="text-muted">@ev.StartDate.ToString("dd MMM yyyy")</small>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">No upcoming events</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

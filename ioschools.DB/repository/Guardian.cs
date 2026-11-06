@@ -1,16 +1,2 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ioschools.Data;
-
-namespace ioschools.DB.repository
-{
-    public partial class Repository
-    {
-        public IEnumerable<user> GetStudentsByGuardian(long guardianid)
-        {
-            return db.students_guardians.Where(x => x.parentid == guardianid).Select(x => x.user);
-        }
-    }
-}
+// This file has been superseded by Infrastructure/Repositories/Guardian.cs
+// See ioschools.DB.Infrastructure.Repositories.Repository (partial) for the .NET 8 implementation.

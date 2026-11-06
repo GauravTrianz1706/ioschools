@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>ioschools.Domain</RootNamespace>
+    <AssemblyName>ioschools.Domain</AssemblyName>
+  </PropertyGroup>
+
+  <!-- ioschools.Data provides shared enums (Permission, UserGroup, UserSettings, etc.)
+       and constants (Constants, ClassConstant, etc.) used by Domain entities. -->
+  <ItemGroup>
+    <ProjectReference Include="..\ioschools.Data\ioschools.Data.csproj" />
+  </ItemGroup>
+
+</Project>
